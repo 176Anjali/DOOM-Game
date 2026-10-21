@@ -1,30 +1,29 @@
 # CIAO Architecture Documentation
 
+**Repository:** `176Anjali/DOOM-Game`
 
-**Repository:** `176Anjali/DOOM-Game`  
 **Model:** `llama3.2:3b`
-
 
 ## Executive Summary
 
-Analysis of the DOOM game source code
+This report analyzes the architecture and components of the DOOM game repository.
 
 ## System Purpose
 
-The DOOM game is a first-person shooter game developed by id Software.
+The system purpose is to simulate a game environment with various game objects and NPCs.
 
 ## Architecture and Components
 
-The game consists of several components including the Game class, Map class, NPC class, and others.
+The architecture components include the Game class, Map class, NPC class, and ObjectHandler class.
 
 ## Important Data Flows
 
-The game uses data flows between the Game class, Map class, and NPC class to update and render the game world.
+The important data flows include the player's movement, NPC movement, and collision detection.
 
 ## Technologies and Entry Points
 
-The game uses various technologies including Pygame, PyOpenGL, and others.
+The technologies used include Pygame, and the entry points are the main.py file and the map.py file.
 
 ## Risks and Open Questions
 
-The game has several risks and open questions including the security of the game's network connections and the performance of the game's graphics rendering.
+The risks include the potential for bugs and security vulnerabilities, and the open questions include the implementation of AI for NPCs.
