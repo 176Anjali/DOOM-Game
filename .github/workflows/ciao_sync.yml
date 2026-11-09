@@ -45,10 +45,17 @@ jobs:
         if: ${{ env.CIAO_PROVIDER == 'ollama' && !vars.CIAO_OLLAMA_HOST }}
         run: |
           set -euo pipefail
+          installers=(
+            "https://ollama.com/install.sh"
+            "https://raw.githubusercontent.com/ollama/ollama/main/scripts/install.sh"
+          )
           for attempt in $(seq 1 5); do
-            if curl -fsSL https://ollama.com/install.sh | sh; then
-              exit 0
-            fi
+            for installer in "${installers[@]}"; do
+              if curl -fsSL "$installer" | sh; then
+                exit 0
+              fi
+              echo "Ollama install via ${installer} failed on attempt ${attempt}/5."
+            done
             echo "Ollama install attempt ${attempt}/5 failed."
             sleep 5
           done
