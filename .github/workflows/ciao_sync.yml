@@ -28,8 +28,9 @@ jobs:
         run: python -m pip install "pydantic>=2.7,<3"
 
       - name: Generate architecture documentation
-        working-directory: backend
-        run: python -m app.architecture_docs --root .. --output docs/architecture --exclude backend/data
+        env:
+          PYTHONPATH: backend
+        run: python -m app.architecture_docs --root . --output docs/architecture --exclude backend/data
 
       - name: Commit generated documentation
         run: |
